@@ -1,0 +1,35 @@
+Docs 
+
+1. How to setup the apps and admin user
+------------------------------------------------------------
+
+After successful installation f the package :
+
+1. django-admin startproject mysite test-env
+
+2. mysite --> settings.py : 
+	
+	#include the app name in the settings.py
+	INSTALLED_APPS = [
+	'django_polls.apps.PollsConfig' ,
+	]
+3. mysite --> urls
+
+	import django.urls import include
+	#include the path for polls app
+	urlpatterns = [
+    		path('polls/', include('django_polls.urls')),
+	]	
+
+4. py manage.py makemigrations
+5.py manage.py migrate
+
+6. create admin user :
+	py manage.py createsuperuser admin
+
+7. Testing the app:
+
+	py manage.py runserver
+
+
+
